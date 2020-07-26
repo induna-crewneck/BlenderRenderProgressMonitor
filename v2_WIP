@@ -1,0 +1,63 @@
+@echo off
+setlocal
+
+REM VARIABLES ------------------------
+REM Output path specified in Blender:
+set renderpath=M:\blenderrender\
+REM Number of frames to be rendered:
+set totalframes=498
+REM -----------------------------------
+
+title Testbench
+
+REM ==== Getting timestamp of first rendered frame ==========================================================
+
+for /f "delims=" %%a in ('dir "%renderpath%" /o-d /b') do set oldestfile=%%a
+
+del /s %renderpath%\tmp.txt >nul 2>&1
+del /s %renderpath%\tmp2.txt >nul 2>&1
+
+for /f "tokens=1" %%a in ('dir "%renderpath%\%oldestfile%" /t:c') do (echo %%~a>>"%renderpath%\tmp.txt")
+for /f "tokens=2" %%a in ('dir "%renderpath%\%oldestfile%" /t:c') do (echo %%~a>>"%renderpath%\tmp.txt")
+for /f "skip=3" %%a in ('type %renderpath%\tmp.txt') do (echo %%~a>>%renderpath%\tmp2.txt)
+set /p oldestDate=< %renderpath%\tmp2.txt
+del /s %renderpath%\tmp2.txt >nul 2>&1
+for /f "skip=9" %%a in ('type %renderpath%\tmp.txt') do (echo %%~a>>%renderpath%\tmp2.txt)
+set /p oldestTime=< %renderpath%\tmp2.txt
+del /s %renderpath%\tmp.txt >nul 2>&1
+del /s %renderpath%\tmp2.txt >nul 2>&1
+
+echo First render (%oldestfile%) was completed on %oldestDate% at %oldestTime%
+
+REM  the rest needs to happen every second or whatever
+REM ==== Getting timestamp of last rendered frame ==========================================================
+
+for /f "delims=" %%a in ('dir "%renderpath%" /od /b') do set newestfile=%%a
+
+for /f "tokens=1" %%a in ('dir "%renderpath%\%newestfile%" /t:c') do (echo %%~a>>"%renderpath%\tmp.txt")
+for /f "tokens=2" %%a in ('dir "%renderpath%\%newestfile%" /t:c') do (echo %%~a>>"%renderpath%\tmp.txt")
+for /f "skip=3" %%a in ('type %renderpath%\tmp.txt') do (echo %%~a>>%renderpath%\tmp2.txt)
+set /p newestDate=< %renderpath%\tmp2.txt
+del %renderpath%\tmp2.txt
+for /f "skip=9" %%a in ('type %renderpath%\tmp.txt') do (echo %%~a>>%renderpath%\tmp2.txt)
+set /p newestTime=< %renderpath%\tmp2.txt
+del %renderpath%\tmp.txt
+del %renderpath%\tmp2.txt
+echo Newest render (%newestfile%) was completed on %newestDate% at %newestTime%
+
+REM ==== Calculating time passed between first and last frame =============================================
+
+Set "Start=07/26/2020 %oldestTime%"
+Set "End=07/26/2020 %newestTime%"
+For /F "usebackqdelims=" %%A in (`
+powershell -NoP -C "$TS=New-TimeSpan -Start ([datetime]'%Start%') -End ([datetime]'%End%');'{0}:{1:00}:{2:00}' -f [math]::Floor($TS.TotalHours),$TS.Minutes,$TS.Seconds"
+`) Do Set "TimePassed=%%A" >nul 2>&1
+Set TimePassed >nul 2>&1
+echo %TimePassed% have passed between first and newest rendered frame.
+echo ===========================================================================
+
+REM == This is only time during one day. Additional calculation needed for date difference!
+REM == SO far this "only" specifies the cration date of the first and last rendered frame
+REM == Going forward the difference has to be calculated taking days into account, then divide the timeDiff by the frames rendered and multiply that by the number of total frames to get the total render time.
+REN == Then %timepassed% needs to be subtracted from the totalrendertime and we should have a remaining time
+pause

@@ -4,7 +4,7 @@ A little script I made to keep a better eye on the progress of blender renders. 
 ![Title](https://i.imgur.com/Uzxxo9R.jpg)
 
 ## Setup
-In the file I specified where you have to enter what data. You'll need your Output folder, the number of frames that are being rendered and your file extension (usually PNG)
+In the file I specified where you have to enter what data. You'll need your Output folder, the number of frames that are being rendered and your file extension. The latter usually is PNG and is entered as such in the file. No need to change this unless you render in another format.
 
 ![RenderPath](https://i.imgur.com/1vD1jyk.png)
 
@@ -13,7 +13,7 @@ In the file I specified where you have to enter what data. You'll need your Outp
 The screenshots below are of an old version. The highlighted parts are the same, just don't get confused if the rest changed.
 
 ## Preview
-![](preview.gif)
+![](https://i.imgur.com/9sxTbBb.gif)
 
 As you can see it shows you prety much all the info you could want and *should* update itself within 5 seconds of a new render appearing in your target folder.
 

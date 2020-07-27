@@ -3,9 +3,9 @@ setlocal
 
 REM ==== ENTER VARIABLES HERE ===============================================================================
 REM Output path specified in Blender:
-set renderpath=M:\blenderrender\
+set renderpath=[INSERT TARGET PATH HERE]
 REM Number of frames to be rendered:
-set totalframes=1935
+set totalframes=[INSERT NUMBER OF FRAMES TO BE RENDERED HERE]
 REM File format
 set extension=PNG
 REM =========================================================================================================

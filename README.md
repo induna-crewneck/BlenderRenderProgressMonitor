@@ -11,7 +11,7 @@ In the file I specified where you have to enter what data. You'll need your Outp
 Note: The screenshots used can be subject to future changes to either my script or blender. The basic elements should remain the same, though.
 
 ## Preview
-![Preview](https://i.imgur.com/bSWFILJ.gif)
+<blockquote class="imgur-embed-pub" lang="en" data-id="bSWFILJ"><a href="https://imgur.com/bSWFILJ">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 As you can see it shows you prety much all the info you could want and *should* update itself within 5 seconds of a new render appearing in your target folder.
 

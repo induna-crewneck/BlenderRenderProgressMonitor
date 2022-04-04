@@ -6,16 +6,13 @@ REM === https://github.com/induna-crewneck
 
 REM ==== ENTER VARIABLES HERE ===============================================================================
 REM Output path specified in Blender:
-set renderpath=S:\Digital\2022\20220402_Head\render\noisy\2e_full_v1_noisy_
+set renderpath=C:\Examplepath\targetfolder
 REM Number of frames to be rendered:
 set totalframes=360
 REM File format
 set extension=PNG
-REM set time between checks (should be roughly time to render 1 frame)
+REM set time between checks
 set waittime=30
-REM User input to variable:
-REM set /P "variable=Enter variable:   "
-REM echo %variable%
 REM =========================================================================================================
 
 echo =============================================
@@ -55,7 +52,6 @@ REM echo %newestfile%	%NewestTime%
 REM =========================================================================================================
 
 REM ==== Calculate time elapsed =============================================================================
-REM Source: https://stackoverflow.com/questions/51082845/calculate-a-duration-between-two-dates-dd-mm-yyyy-hhmmss-in-batch-file
 set "DateToJDN(Date)=( a=1Date, y=a%%10000, a/=10000, m=a%%100, d=a/100-100, a=(m-14)/12, (1461*(y+4800+a))/4+(367*(m-2-12*a))/12-(3*((y+4900+a)/100))/4+d-32075 )"
 for /F "tokens=1-4" %%a in ("%OldestTime% %NewestTime%") do set "date1=%%a" & set "time1=%%b" & set "date2=%%c" & set "time2=%%d"
 set /A "days=!DateToJDN(Date):Date=%date2:/=%! - !DateToJDN(Date):Date=%date1:/=%!" 2> nul

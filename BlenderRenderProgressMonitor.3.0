@@ -106,7 +106,7 @@ REM echo Total render time:	%totalRenderDays%d %totalRenderHoursleft%h %totalRen
 echo Remaining time:		%remainingdays%d %remaininghours%h %remainingmins%min %remainingsecs%s
 echo Estimated completion:	%NewestTime:~6,4%-%NewestTime:~3,2%-%ETAd%   %ETAh%:%ETAm%:%ETAs%
 echo Rendered frames:	%renderedframes% / %totalframes% frames
-if %percentagedone% gtr 99 (echo ######################################## %percentagedone%%%) else (
+if %percentagedone% gtr 97 (echo ######################################## %percentagedone%%%) else (
 if %percentagedone% gtr 95 (echo ######################################__ %percentagedone%%%) else (
 if %percentagedone% gtr 90 (echo ####################################____ %percentagedone%%%) else (
 if %percentagedone% gtr 85 (echo ##################################______ %percentagedone%%%) else (

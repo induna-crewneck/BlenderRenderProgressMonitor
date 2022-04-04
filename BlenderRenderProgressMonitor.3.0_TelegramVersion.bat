@@ -128,8 +128,8 @@ if %percentagedone% gtr 25 (echo ##########______________________________ %perce
 if %percentagedone% gtr 20 (echo ########________________________________ %percentagedone%%%) else (
 if %percentagedone% gtr 15 (echo ######__________________________________ %percentagedone%%%) else (
 if %percentagedone% gtr 10 (echo ####____________________________________ %percentagedone%%%) else (
-if %percentagedone% gtr 5  (echo ##______________________________________ %percentagedone%%%) else (
-if %percentagedone% gtr 1  (echo #_______________________________________ %percentagedone%%%)else (
+if %percentagedone% gtr 7  (echo ##______________________________________ %percentagedone%%%) else (
+if %percentagedone% gtr 3  (echo #_______________________________________ %percentagedone%%%)else (
 echo ________________________________________ %percentagedone%%%)))))))))))))))))))))
 echo =============================================
 echo.

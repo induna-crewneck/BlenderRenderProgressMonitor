@@ -10,6 +10,10 @@ In the file I specified where you have to enter what data. You'll need your Outp
 
 Note: The screenshots used can be subject to future changes to either my script or blender. The basic elements should remain the same, though.
 
+## Telegram
+There is a version of the script available that will send a Telegram message to you notifying you of the completed render process.
+To use this, you will have to create a Telegrambot or use one you have already created (as you will need the bot token) and you will need your own ID to send the message to. These two will be entered into the script the same way the blender info was.
+
 ## Preview
 [PreviewOnImgur](https://imgur.com/8oiKa7D)
 As you can see it shows you prety much all the info you could want and *should* update itself within 5 seconds of a new render appearing in your target folder.

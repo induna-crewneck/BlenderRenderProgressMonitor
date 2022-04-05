@@ -16,18 +16,19 @@ set waittime=30
 set telegrambottoken=4334584910:AAEPmjlh84N62Lv
 set mytelegramid=123456789
 REM =========================================================================================================
-
+:waitfor1
 echo =============================================
 echo ====== Blender Render Progress Monitor ======
 echo =============================================
 
 REM ==== Waiting for first frame ============================================================================
-:waitfor1
+
 if exist %renderpath%\*.%extension% (
     echo File detected in target folder. Starting script...
 ) else (
     echo No file detected in target folder. Waiting and re-checking...
     timeout 10 2> nul
+    cls
     goto waitfor1
 )
 REM =========================================================================================================
@@ -109,7 +110,8 @@ REM echo Total render time:	%totalRenderDays%d %totalRenderHoursleft%h %totalRen
 echo Remaining time:		%remainingdays%d %remaininghours%h %remainingmins%min %remainingsecs%s
 echo Estimated completion:	%NewestTime:~6,4%-%NewestTime:~3,2%-%ETAd%   %ETAh%:%ETAm%:%ETAs%
 echo Rendered frames:	%renderedframes% / %totalframes% frames
-if %percentagedone% gtr 97 (echo ######################################## %percentagedone%%%) else (
+if %percentagedone% gtr 99 (echo ######################################## %percentagedone%%%) else (
+if %percentagedone% gtr 97 (echo #######################################_ %percentagedone%%%) else (
 if %percentagedone% gtr 95 (echo ######################################__ %percentagedone%%%) else (
 if %percentagedone% gtr 90 (echo ####################################____ %percentagedone%%%) else (
 if %percentagedone% gtr 85 (echo ##################################______ %percentagedone%%%) else (
@@ -128,9 +130,9 @@ if %percentagedone% gtr 25 (echo ##########______________________________ %perce
 if %percentagedone% gtr 20 (echo ########________________________________ %percentagedone%%%) else (
 if %percentagedone% gtr 15 (echo ######__________________________________ %percentagedone%%%) else (
 if %percentagedone% gtr 10 (echo ####____________________________________ %percentagedone%%%) else (
-if %percentagedone% gtr 7  (echo ##______________________________________ %percentagedone%%%) else (
-if %percentagedone% gtr 3  (echo #_______________________________________ %percentagedone%%%)else (
-echo ________________________________________ %percentagedone%%%)))))))))))))))))))))
+if %percentagedone% gtr 5  (echo ##______________________________________ %percentagedone%%%) else (
+if %percentagedone% gtr 1  (echo #_______________________________________ %percentagedone%%%)else (
+echo ________________________________________ %percentagedone%%%))))))))))))))))))))))
 echo =============================================
 echo.
 echo Refreshing after %waittime% seconds or on keypress...

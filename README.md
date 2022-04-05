@@ -15,8 +15,8 @@ There is a version of the script available that will send a Telegram message to 
 To use this, you will have to create a Telegrambot or use one you have already created (as you will need the bot token) and you will need your own ID to send the message to. These two will be entered into the script the same way the blender info was.
 
 ## Preview
-[PreviewOnImgur](https://imgur.com/8oiKa7D)
-As you can see it shows you prety much all the info you could want and *should* update itself within 5 seconds of a new render appearing in your target folder.
+[PreviewOnImgur](https://imgur.com/a/Jeen0q2)
+As you can see it shows you prety much all the info you could want and *should* update itself within 30 seconds of a new render appearing in your target folder until it is done
 
 ## Attributions
 Code to calculate elapsed time was adapted from code by Antonio Perez Ayala aka [Aacini](https://stackoverflow.com/users/778560/aacini) in [this thread](https://stackoverflow.com/questions/51082845/calculate-a-duration-between-two-dates-dd-mm-yyyy-hhmmss-in-batch-file)

@@ -1,7 +1,7 @@
 # Blender Render Progress Monitor
 A script I made to keep a better eye on the progress of blender renders. Especially when doing command line rendering this is a nice tool.
 
-![Title](https://i.imgur.com/MngMXRl.png)
+![Title](https://i.imgur.com/R7ixkO9.png)
 
 ## Setup
 In the file I specified where you have to enter what data. You'll need your Output folder, the number of frames that are being rendered and your file extension. The latter usually is PNG and is entered as such in the file. No need to change this unless you render in another format. The output folder path should not contain any spaces.

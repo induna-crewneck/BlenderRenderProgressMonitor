@@ -14,6 +14,8 @@ Note: The screenshots used can be subject to future changes to either my script 
 There is a version of the script available that will send a Telegram message to you notifying you of the completed render process.
 To use this, you will have to create a Telegrambot or use one you have already created (as you will need the bot token) and you will need your own ID to send the message to. These two will be entered into the script the same way the blender info was.
 
+As of version 3.2 the Telegram version is the main version. The non-Telegram version is a fork with the telegram code taken out but not separately tested.
+
 ## Preview
 [PreviewOnImgur](https://imgur.com/a/Jeen0q2)
 As you can see it shows you prety much all the info you could want and *should* update itself within 30 seconds of a new render appearing in your target folder until it is done

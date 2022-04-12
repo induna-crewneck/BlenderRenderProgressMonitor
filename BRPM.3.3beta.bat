@@ -39,10 +39,6 @@ if exist %renderpath%\*.%extension% (
 REM =========================================================================================================
 
 :loop
-cls
-echo =============================================
-echo ====== Blender Render Progress Monitor ======
-echo =============================================
 REM ==== Find oldest and newest files =======================================================================
 for /f "delims=" %%a in ('dir "%renderpath%" /o-d /b') do set oldestfile=%%a
 for /f "delims=" %%a in ('dir "%renderpath%" /od /b') do set newestfile=%%a
@@ -230,7 +226,6 @@ REM ============================================================================
 REM Check if done, otherwise wait
 IF %renderedFrames% GEQ %totalframes% (goto done) else (
 timeout %waittime% > nul
-cls
 goto loop)
 
 :done

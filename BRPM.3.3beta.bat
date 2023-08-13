@@ -16,7 +16,7 @@ REM File format
 set extension=PNG
 REM set time between checks (should be roughly time to render 1 frame)
 set waittime=30
-set telegrambottoken=4334584910:AAEPmjlh84N62Lv
+set telegrambottoken=123456789:ABCDefgh12I34Jk
 set mytelegramid=123456789
 REM =========================================================================================================
 

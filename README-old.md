@@ -1,3 +1,5 @@
+This Readme applies to the .bat files (pre v4)
+
 # Blender Render Progress Monitor
 A script I made to keep a better eye on the progress of blender renders. Especially when doing command line rendering this is a nice tool.
 
